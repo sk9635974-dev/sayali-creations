@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sayali's Creations</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      background: #fff7f2;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* Smooth Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0); }
+    }
+
+    header {
+      text-align: center;
+      padding: 70px 20px;
+      background: linear-gradient(135deg, #ffb3c6, #ffe08c, #ffd4b2);
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    header h1 {
+      font-size: 50px;
+      letter-spacing: 2px;
+      animation: float 3s infinite ease-in-out;
+    }
+
+    header p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    nav {
+      text-align: center;
+      padding: 12px;
+      background: #ffdbe8;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      margin: 0 18px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+      color: #333;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff3d6b;
+      transform: scale(1.1);
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      animation: fadeIn 1.4s ease-out;
+    }
+
+    .hero img {
+      width: 40%;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .hero-text {
+      width: 50%;
+      text-align: left;
+    }
+
+    .hero-text h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #ff6f91;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: 0.3s;
+      margin: 10px 5px;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background: #ff3d6b;
+      transform: scale(1.07);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #ffd8e8;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>MADE OF LOVE ♡</h1>
+    <p>Handmade Crochet • Aesthetic Gifts • Art Creations</p>
+  </header>
+
+  <nav>
+    <a href="about.html">About</a>
+    <a href="gallary.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <img src="https://i.pinimg.com/1200x/3f/69/6b/3f696be23b09d4030fb322ee119da53e.jpg" alt="Handmade Art" />
+
+    <div class="hero-text">
+      <h2>Welcome to My Creative World 🌸</h2>
+      <p>
+        I create beautiful handmade crochet items, aesthetic bouquets,
+        paintings, sketches, and cute gifts — all crafted with love and
+        creativity.
+      </p>
+      <p>
+        Explore my world of colours, textures, and heartfelt creations.
+      </p>
+
+      <a href="gallary.html" class="btn">View Gallery</a>
+      <a href="contact.html" class="btn">Place an Order</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Sayali's Creations | Handmade With Love
+  </footer>
+
+</body>
+</html>

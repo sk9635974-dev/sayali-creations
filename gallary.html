@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Sayali's Art</title>
+
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #fffaf4; color: #333; }
+    header { text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #ffb3c6, #ffe08c);}  
+    nav { text-align: center; padding: 15px; background: #ffd8e8; }
+    nav a { margin: 0 15px; text-decoration: none; font-weight: bold; color: #333; transition: color 0.3s, transform 0.2s; }
+    nav a:active { color: #ff3d6b; transform: scale(0.95); }
+
+    .gallery-section { padding: 50px 20px; max-width: 1100px; margin: auto; }
+
+    /* CATEGORY BUTTONS */
+    .filters {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .filters button {
+      background: #ffb3c6;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .filters button:hover {
+      background: #ff8eb3;
+      transform: scale(1.05);
+    }
+
+    /* IMAGES */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .grid img {
+      width: 100%; height: 260px; object-fit: cover;
+      border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.4s ease, box-shadow 0.3s ease;
+    }
+    .grid img:hover {
+      transform: scale(1.06);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    /* POPUP */
+    .popup {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.3s;
+      z-index: 1000;
+    }
+    .popup img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(255,255,255,0.3);
+      animation: zoomIn 0.3s;
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes zoomIn { from { transform: scale(0.7); } to { transform: scale(1); } }
+
+    .close-btn {
+      position: absolute;
+      top: 20px; right: 30px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    footer { text-align: center; padding: 20px; background: #ffd8e8; margin-top: 40px; }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>My Art Gallery</h1>
+  <p>A collection of my creativity and artwork</p>
+</header>
+
+<nav>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<section class="gallery-section">
+  <h2>Gallery</h2>
+  <p>Select a category to view your artwork collection.</p>
+
+  <!-- FILTER BUTTONS -->
+  <div class="filters">
+    <button onclick="filterGallery('all')">All</button>
+    <button onclick="filterGallery('crochet')">Chocolate Art</button>
+    <button onclick="filterGallery('bouquet')">Bouquet Art</button>
+  </div>
+
+  <div class="grid">
+
+    <!-- crochet Art -->
+     <img class="item crochet" src="https://i.pinimg.com/1200x/ea/1b/39/ea1b393702ca120200d1015143338c79.jpg">
+    <img class="item crochet" src="https://i.pinimg.com/736x/9b/3e/03/9b3e039e6cb836a9be3eaff9eb3641b2.jpg">
+    <img class="item crochet" src="https://i.pinimg.com/736x/1f/fe/dd/1ffedde7d3fab3a95adc1a6e28aaf2d8.jpg">
+    <img class="item crochet" src="https://i.pinimg.com/1200x/7b/7a/ce/7b7acef0c43ea1b7740366a11444a0a8.jpg">
+    <img class="item crochet" src="https://i.pinimg.com/736x/ef/6b/a2/ef6ba289287c5d4ce75a0fb1afcd6ddc.jpg">
+    <img class="item crochet" src="https://i.pinimg.com/1200x/a5/77/e1/a577e1a12f156e4005a4fdf997e0b14b.jpg">
+     <img class="item crochet" src="https://i.pinimg.com/736x/f2/03/82/f20382b075f2f0791dc11ab3c291391f.jpg">
+      <img class="item crochet" src="https://i.pinimg.com/736x/ca/38/75/ca38759baf8b87d97c3b5e774f88dd33.jpg">
+       <img class="item crochet" src="https://i.pinimg.com/736x/c2/1a/55/c21a559877e7e92b6d477ec3af41d048.jpg">
+        <img class="item crochet" src="https://i.pinimg.com/736x/31/6d/67/316d6767d7f4a6bccf74570696dccd4d.jpg">
+        <img class="item crochet" src="https://i.pinimg.com/736x/c9/04/34/c904345e69ed11e6abbf4dccc5511a4e.jpg">
+        <img class="item crochet" src="https://i.pinimg.com/736x/55/76/0b/55760b460612236193147e3bfb758235.jpg">
+        <img class="item crochet" src="https://i.pinimg.com/736x/59/e3/ca/59e3cab915d56dca16307dc76f2c4872.jpg">
+        <img class="item crochet" src="https://i.pinimg.com/736x/59/e3/ca/59e3cab915d56dca16307dc76f2c4872.jpg">
+        <img class="item crochet" src="https://i.pinimg.com/736x/44/f0/fc/44f0fcc164b169c6fbb1687762e11e20.jpg">
+        <img class="item crochet" src="https://i.pinimg.com/736x/36/28/5c/36285c1cfc5a4f2ab3d57c9f51db3971.jpg">
+        <img class="item crochet" src="https://i.pinimg.com/736x/1d/05/97/1d0597d039facb6995b5919185196241.jpg">
+        <img class="item crochet" src="https://i.pinimg.com/736x/a9/b2/07/a9b207fdc09b150b2b462ccc74fb7c47.jpg">
+        <img class="item crochet" src="https://i.pinimg.com/736x/73/e1/5d/73e15d72ed70c52fd1bd6a522def114d.jpg">
+
+
+
+
+
+
+
+    <!-- Bouquet Art -->
+   
+     <img class="item bouquet" src="https://i.pinimg.com/736x/e9/e6/e9/e9e6e961b7d63e69bf7b99a2e482eba0.jpg">
+      <img class="item bouquet" src="https://i.pinimg.com/1200x/3e/2b/48/3e2b48b1baca46fbfbb3aae35131aa8c.jpg">
+       <img class="item bouquet" src="https://i.pinimg.com/736x/32/87/a9/3287a98b7e28e4a33e1d7bc8b5f075e8.jpg">
+        <img class="item bouquet" src="https://i.pinimg.com/736x/89/51/88/895188db0a0e128056bdee2272090114.jpg">
+         <img class="item bouquet" src="https://i.pinimg.com/736x/a6/0e/68/a60e68b9ac5db367b91d25502016c594.jpg">
+         <img class="item bouquet" src="https://i.pinimg.com/1200x/c7/6b/c6/c76bc662e8f15ed1d8ccc93ccadae838.jpg">
+         <img class="item bouquet" src="https://i.pinimg.com/736x/eb/94/ea/eb94ea144be6f078e15554e45c110adc.jpg">
+         <img class="item bouquet" src="https://i.pinimg.com/736x/f7/26/0a/f7260acc899b99ed8b4ac88d4662e4e5.jpg">
+         <img class="item bouquet" src="https://i.pinimg.com/736x/d2/36/0a/d2360a0746273d061f0746a947e38851.jpg">
+         <img class="item bouquet" src="https://i.pinimg.com/736x/a4/33/11/a4331158ad3a26ce03217b55937d403e.jpg">
+         <img class="item bouquet" src="https://i.pinimg.com/1200x/d5/e0/96/d5e096330e68ca7e5e2e1c34627698af.jpg">
+         <img class="item bouquet" src="https://i.pinimg.com/736x/be/07/f0/be07f0fb5b3b9b8f5f80390cd0bad6ff.jpg">
+    
+    
+  </div>
+</section>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <span class="close-btn" id="closeBtn">&times;</span>
+  <img id="popupImg" src="">
+</div>
+
+<footer>
+  © 2025 Sayali's Art | All Rights Reserved
+</footer>
+
+<script>
+  /* POPUP OPEN */
+  const popup = document.getElementById("popup");
+  const popupImg = document.getElementById("popupImg");
+  const closeBtn = document.getElementById("closeBtn");
+
+  document.querySelectorAll(".grid img").forEach(img => {
+    img.addEventListener("click", () => {
+      popup.style.display = "flex";
+      popupImg.src = img.src;
+    });
+  });
+
+  closeBtn.addEventListener("click", () => popup.style.display = "none");
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) popup.style.display = "none";
+  });
+
+  /* FILTER SYSTEM */
+  function filterGallery(category) {
+    let items = document.querySelectorAll(".item");
+
+    items.forEach(item => {
+      if (category === "all") {
+        item.style.display = "block";
+      } else if (item.classList.contains(category)) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

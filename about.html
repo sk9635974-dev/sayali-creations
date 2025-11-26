@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Made With Love</title>
+
+  <style>
+    body { 
+      margin: 0; 
+      font-family: Arial, sans-serif; 
+      background: #fffaf4; 
+      color: #333; 
+    }
+
+    header { 
+      text-align: center; 
+      padding: 40px 20px; 
+      background: linear-gradient(135deg, #ffb3c6, #ffe08c);
+      animation: fadeIn 1.5s ease-in;
+    }   
+
+    nav { 
+      text-align: center; 
+      padding: 15px; 
+      background: #ffd8e8; 
+      animation: fadeIn 1.8s ease-in;
+    }
+
+    nav a { 
+      margin: 0 15px; 
+      text-decoration: none; 
+      font-weight: bold; 
+      color: #333; 
+      transition: color 0.3s, transform 0.2s; 
+    }
+
+    nav a:hover { color: #ff3d6b; }
+
+    nav a:active { 
+      color: #ff3d6b; 
+      transform: scale(0.95); 
+    }
+
+    /* Fade In Effect */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Floating effect */
+    .float-effect {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* Soft Glow */
+    .soft-glow:hover {
+      box-shadow: 0 0 20px rgba(255, 182, 193, 0.6);
+      transform: scale(1.04);
+      transition: 0.4s ease;
+    }
+
+    /* Typewriter Effect */
+    .typewriter {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid #ff9eb7;
+      width: 0;
+      animation: typing 3s steps(30) forwards, blink .7s infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    /* Section styling */
+    section { 
+      padding: 50px 20px; 
+      max-width: 900px; 
+      margin: auto; 
+      line-height: 1.7;
+    }
+
+    .profile-img { 
+      width: 180px; 
+      height: 180px; 
+      border-radius: 50%; 
+      object-fit: cover; 
+      display: block; 
+      margin: 0 auto 20px auto; 
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2); 
+    }
+
+    footer { 
+      text-align: center; 
+      padding: 20px; 
+      background: #ffd8e8; 
+      margin-top: 40px; 
+      animation: fadeIn 2.2s ease-in;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1 class="typewriter">About Me ♡</h1>
+    <p>Handmade With Love, Softness & Creativity</p>
+  </header>
+
+  <nav>
+    <a href="gallary.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="fade-in">
+    <img class="profile-img float-effect soft-glow" 
+    src="https://i.pinimg.com/736x/66/3f/cc/663fccd034baa7d4234901b103b024f3.jpg" 
+    alt="Artist Photo">
+
+    <h2>Hi, I'm Sayali ♡</h2>
+
+    <p>
+      Welcome to my soft little handmade corner — filled with crochet art,
+      gentle colors, and creations made with pure love and comfort.
+    </p>
+
+    <p>
+      I make <b>crochet bouquets, cute crochet gifts, floral pieces,
+      aesthetic decor, frames, and personalized handmade surprises</b>.
+      Every piece is crafted slowly, lovingly, and thoughtfully.
+    </p>
+
+    <p>
+      What began as a hobby soon became my safe space.  
+      Now, crochet and art are how I express warmth, care, and calmness.
+      My goal is to create gifts that feel cozy, meaningful, and unforgettable.
+    </p>
+
+    <p>
+      Thank you for being here.  
+      I hope my creations bring softness and happiness into your world,
+      just like making them brings peace into mine ♡
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Made With Love | Handmade Crochet Creations
+  </footer>
+
+</body>
+</html>

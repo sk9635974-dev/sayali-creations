@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #ffe5d9, #fffaf4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            width: 380px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 8px 20px rgba(255, 130, 90, 0.3);
+            animation: pop 0.6s ease-out;
+        }
+
+        @keyframes pop {
+            0% { transform: scale(0.7); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .title {
+            text-align: center;
+            font-size: 26px;
+            color: #ff7043;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border: 2px solid #ffe0d0;
+            border-radius: 10px;
+            outline: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #ff8a65;
+            box-shadow: 0 0 6px rgba(255, 138, 101, 0.5);
+        }
+
+        button {
+            margin-top: 15px;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #ff8a65, #ff7043);
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        button:hover {
+            transform: scale(1.04);
+            box-shadow: 0px 8px 15px rgba(255, 112, 67, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="title">Contact Me</div>
+
+        <form id="contactForm">
+            <input id="name" type="text" placeholder="Your Name" required />
+            <input id="email" type="email" placeholder="Your Email" required />
+            <input id="phone" type="tel" placeholder="Your Contact Number" pattern="[0-9]{10}" required />
+            <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+        <h5>Email: sk9635974@gmail.com</h5>
+    </div>
+
+    <!-- FIREBASE -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBGMx5B-DenOysRH1WEI5lW-1v4exaPmMM",
+            authDomain: "made-with-love-a2796.firebaseapp.com",
+            projectId: "made-with-love-a2796",
+            storageBucket: "made-with-love-a2796.firebasestorage.app",
+            messagingSenderId: "9281824714",
+            appId: "1:9281824714:web:763cebb8a8012eda6a1133",
+            measurementId: "G-84R894V8W0"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        async function saveMessage(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const message = document.getElementById("message").value;
+
+            await addDoc(collection(db, "messages"), {
+                name: name,
+                email: email,
+                phone: phone,
+                message: message,
+                time: new Date()
+            });
+
+            alert("Message Sent Successfully!");
+            event.target.reset();
+        }
+
+        document.getElementById("contactForm").addEventListener("submit", saveMessage);
+    </script>
+
+</body>
+
+</html>
